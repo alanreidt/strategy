@@ -1,41 +1,113 @@
 /* =========================================================
-	BASE
-	========================================================= */
+   BASE
+   ========================================================= */
+
+/* VARIABLES */
+
+:root {
+   --base-font-family: "Open Sans", Helvetica, Arial, sans-serif;
+   --base-font-size: 19px
+}
 
 /* SETUP */
 
 html {
-	box-sizing: border-box;
+   box-sizing: border-box;
 }
 
 *,
 *::before,
 *::after {
-	box-sizing: inherit;
+   box-sizing: inherit;
 }
 
 body {
-	margin: 0;
-	font-family: var(--base-font-family);
-	font-size: var(--base-font-size);
-	color: #2c343b;
-	background-color: #fff;
+   margin: 0;
+   font-family: var(--base-font-family);
+   font-size: var(--base-font-size);
+   color: #2c343b;
+   background-color: #fff;
 }
 
 ul {
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
+   margin: 0;
+   padding: 0;
+   list-style-type: none;
 }
 
 a {
-	text-decoration: none;
+   text-decoration: none;
 }
 
-/* =========================================================
-	MODULE
-	========================================================= */
 
 /* =========================================================
-	LAYOUT
-	========================================================= */
+   MODULE
+   ========================================================= */
+
+/* SLIDER */
+
+.slider__item {
+   display: none;
+}
+
+.slider__item_active {
+   display: block;
+}
+
+
+/* =========================================================
+   LAYOUT
+   ========================================================= */
+
+/* HERO */
+
+.hero {
+   position: relative;
+   height: 900px;
+   background: center / cover no-repeat;
+}
+
+.hero_search {
+   background-image: url(../img/bg-hero-1.jpg);
+   background-color: #382c52;
+}
+
+.hero_explore {
+   background-image: url(../img/bg-hero-2.jpg);
+   background-color: #82716b;
+}
+
+.hero_signup {
+   background-image: url(../img/bg-hero-3.jpg);
+   background-color: #637e96;
+}
+
+.hero__content {
+   position: absolute;
+   top: 50%; left: 50%;
+   -webkit-transform: translate(-50%, -50%);
+           transform: translate(-50%, -50%);
+
+   width: 100%;
+   max-width: 600px;
+   padding: 60px 20px;
+   background-color: rgba(255,255,255,0.8);
+   border-radius: 20px;
+   text-align: center;
+}
+
+.hero__logo {
+   font-size: 96px;
+}
+
+.hero__title {
+   margin-top: 30px;
+   margin-bottom: 20px;
+   font-size: 58px;
+   font-weight: 400;
+   color: #000;
+}
+
+.hero__subtitle {
+   margin-bottom: 50px;
+}
