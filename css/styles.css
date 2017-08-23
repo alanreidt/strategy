@@ -25,6 +25,7 @@ body {
    margin: 0;
    font-family: var(--base-font-family);
    font-size: var(--base-font-size);
+   font-weight: 300;
    color: #2c343b;
    background-color: #fff;
 }
@@ -43,6 +44,69 @@ a {
 /* =========================================================
    MODULE
    ========================================================= */
+
+/* BUTTON */
+
+button.button {
+   cursor: pointer;
+}
+
+.button {
+   display: inline-block;
+   padding: 18px 50px;
+   font-family: inherit;
+   font-size: inherit;
+   color: #fff;
+   background-color: #0099cb;
+   border: none;
+   border-radius: 10px;
+   text-transform: capitalize;
+   transition: background-color .3s ease;
+}
+
+.button:hover {
+   background-color: #58BEDF;
+}
+
+/* FORM CONTROL */
+
+.form-control {
+   display: inline-block;
+   width: 100%;
+   padding: 15px;
+   font-family: inherit;
+   font-size: 21px;
+   font-weight: 300;
+   color: #55595c;
+   background-color: #fff;
+   border: 1px solid transparent;
+   border-radius: 10px;
+}
+
+.form-control:focus {
+   outline: 0;
+   border-color: #66afe9;
+}
+
+.form-control::placeholder {
+   color: #000;
+}
+
+.form-control::-webkit-input-placeholder {
+   color: #000;
+}
+
+.form-control::-ms-input-placeholder {
+   color: #000;
+}
+
+.form-control:-ms-input-placeholder {
+   color: #000;
+}
+
+.form-control::-moz-placeholder {
+   opacity: 1;
+}
 
 /* SLIDER */
 
@@ -90,7 +154,7 @@ a {
 
    width: 100%;
    max-width: 600px;
-   padding: 60px 20px;
+   padding: 60px;
    background-color: rgba(255,255,255,0.8);
    border-radius: 20px;
    text-align: center;
@@ -106,8 +170,34 @@ a {
    font-size: 58px;
    font-weight: 400;
    color: #000;
+   text-transform: uppercase;
 }
 
 .hero__subtitle {
    margin-bottom: 50px;
+   font-size: 20px;
+   color: #000;
+   text-transform: capitalize;
+}
+
+.hero__desc {
+   margin-bottom: 14px;
+   font-size: 20px;
+   line-height: 1.4;
+   color: #000;
+}
+
+.hero__input {
+   max-width: 400px;
+   margin-bottom: 15px;
+   border: 1px solid #6a6a6a;
+}
+
+.hero__button {
+   /*display: block;*/
+   /*margin: auto;*/
+   margin-top: 15px;
+   font-size: 20px;
+   font-weight: 600;
+   letter-spacing: 1px;
 }
