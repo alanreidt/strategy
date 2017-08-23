@@ -53,7 +53,7 @@ button.button {
 
 .button {
    display: inline-block;
-   padding: 18px 50px;
+   padding: 20px 52px;
    font-family: inherit;
    font-size: inherit;
    color: #fff;
@@ -203,9 +203,9 @@ button.button {
 }
 
 .hero__title {
-   margin-top: 30px;
+   margin-top: 35px;
    margin-bottom: 20px;
-   font-size: 58px;
+   font-size: 57px;
    font-weight: 400;
    color: #000;
    text-transform: uppercase;
