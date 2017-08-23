@@ -12,7 +12,13 @@
 <body class="page">
    <main class="page__contents">
       <div class="slider">
-         <header class="hero  hero_search  slider__item">
+         <ul class="slider-nav">
+            <li class="slider-nav__item"><a href="#" class="slider-nav__dot  slider-nav__dot_active"></a></li>
+            <li class="slider-nav__item"><a href="#" class="slider-nav__dot"></a></li>
+            <li class="slider-nav__item"><a href="#" class="slider-nav__dot"></a></li>
+         </ul>
+
+         <header class="hero  hero_search  slider__item slider__item_active">
             <div class="hero__content">
                <div class="hero__logo">
                   <i class="icon  icon-cogs" aria-hidden="true"></i>
@@ -24,15 +30,9 @@
                   <button class="button  hero__button" type="submit">Search</button>
                </form>
             </div>
+        </header>
 
-            <ul class="slider-nav">
-               <li class="slider-nav__item"><a href="#" class="slider__dot  slider__dot_active"></a></li>
-               <li class="slider-nav__item"><a href="#" class="slider__dot"></a></li>
-               <li class="slider-nav__item"><a href="#" class="slider__dot"></a></li>
-            </ul>
-         </header>
-
-         <header class="hero  hero_explore  slider__item  slider__item_active">
+         <header class="hero  hero_explore  slider__item">
             <div class="hero__content">
                <div class="hero__logo">
                   <i class="icon  icon-compass" aria-hidden="true"></i>
@@ -43,13 +43,7 @@
                </p>
                   <a href="#" class="button  hero__button">Explore</a>
             </div>
-
-            <ul class="slider-nav">
-               <li class="slider-nav__item"><a href="#" class="slider__dot"></a></li>
-               <li class="slider-nav__item"><a href="#" class="slider__dot  slider__dot_active"></a></li>
-               <li class="slider-nav__item"><a href="#" class="slider__dot"></a></li>
-            </ul>
-         </header>
+        </header>
 
          <header class="hero  hero_signup  slider__item">
             <div class="hero__content">
@@ -63,13 +57,7 @@
                   <button class="button  hero__button" type="submit">Sign up</button>
                </form>
             </div>
-
-            <ul class="slider-nav">
-               <li class="slider-nav__item"><a href="#" class="slider__dot"></a></li>
-               <li class="slider-nav__item"><a href="#" class="slider__dot"></a></li>
-               <li class="slider-nav__item"><a href="#" class="slider__dot  slider__dot_active"></a></li>
-            </ul>
-         </header>
+        </header>
       </div>
 
       <section class="slides">
