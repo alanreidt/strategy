@@ -110,12 +110,48 @@ button.button {
 
 /* SLIDER */
 
+.slider {
+   position: relative;
+}
+
 .slider__item {
    display: none;
 }
 
 .slider__item_active {
    display: block;
+}
+
+.slider-nav {
+   position: absolute;
+   bottom: 20px;
+
+   width: 100%;
+
+   font-size: 0;
+   text-align: center;
+   z-index: 300;
+}
+
+.slider-nav__item {
+   display: inline-block;
+}
+
+.slider-nav__item:not(:last-child) {
+   margin-right: 20px;
+}
+
+.slider-nav__dot {
+   display: inline-block;
+   width: 20px;
+   height: 20px;
+   font-size: var(--base-font-size);
+   background-color: rgba(255, 255, 255, 0.5);
+   border-radius: 50%;
+}
+
+.slider-nav__dot_active {
+   background-color: #fff;
 }
 
 
@@ -129,6 +165,7 @@ button.button {
    position: relative;
    height: 900px;
    background: center / cover no-repeat;
+   z-index: 100;
 }
 
 .hero_search {
@@ -158,6 +195,7 @@ button.button {
    background-color: rgba(255,255,255,0.8);
    border-radius: 20px;
    text-align: center;
+   z-index: 200;
 }
 
 .hero__logo {
@@ -176,6 +214,7 @@ button.button {
 .hero__subtitle {
    margin-bottom: 50px;
    font-size: 20px;
+   font-weight: 400;
    color: #000;
    text-transform: capitalize;
 }
@@ -183,6 +222,7 @@ button.button {
 .hero__desc {
    margin-bottom: 14px;
    font-size: 20px;
+   font-weight: 400;
    line-height: 1.4;
    color: #000;
 }
