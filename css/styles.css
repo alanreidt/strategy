@@ -49,6 +49,10 @@ a {
    MODULE
    ========================================================= */
 
+/* GRID */
+
+
+
 /* BUTTON */
 
 button.button {
@@ -216,6 +220,8 @@ button.button {
 }
 
 .slide__title {
+   margin-top: 0;
+   margin-bottom: 0.7em;
    font-size: 28px;
    font-weight: 400;
    line-height: 1.5;
@@ -223,7 +229,43 @@ button.button {
 }
 
 .slide__paragraph {
+   margin-top: 0;
+   margin-bottom: 16px;
    line-height: 2;
+}
+
+/* SECTION */
+
+.section:nth-child(odd) {
+   color: #fff;
+   background-color: #3f3f67;
+}
+
+.section:nth-child(even) {
+   color: inherit;
+   background-color: #fff;
+}
+
+.section__header {
+   max-width: 620px;
+   margin: auto;
+   margin-bottom: 64px;
+   padding-right: 15px;
+   padding-left: 15px;
+   text-align: center;
+}
+
+.section__title {
+   margin-top: 0;
+   margin-bottom: 32px;
+   font-size: 32px;
+   font-weight: 300;
+   line-height: 1.1;
+}
+
+.section__desc {
+   margin: 0;
+   line-height: 1.8;
 }
 
 
@@ -313,3 +355,11 @@ button.button {
    font-weight: 600;
    letter-spacing: 1px;
 }
+
+/* PLANS */
+
+.plans {
+   padding-top: 90px;
+   padding-bottom: 80px;
+}
+
