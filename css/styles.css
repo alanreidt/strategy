@@ -25,13 +25,16 @@ body {
    margin: 0;
    font-family: var(--base-font-family);
    font-size: var(--base-font-size);
-   font-weight: 300;
    color: #2c343b;
    background-color: #fff;
 }
 
 img {
    max-width: 100%;
+}
+
+p {
+   font-weight: 300;
 }
 
 ul {
@@ -51,7 +54,26 @@ a {
 
 /* GRID */
 
+.row {
+   margin-right: -15px;
+   margin-left: -15px;
+   font-size: 0;
+}
 
+.col {
+   display: inline-block;
+   padding-right: 15px;
+   padding-left: 15px;
+   font-size: var(--base-font-size);
+}
+
+.col-4 {
+   width: 33.33333%;
+}
+
+.col-6 {
+   width: 50%;
+}
 
 /* BUTTON */
 
@@ -237,13 +259,19 @@ button.button {
 /* SECTION */
 
 .section:nth-child(odd) {
-   color: #fff;
    background-color: #3f3f67;
 }
 
 .section:nth-child(even) {
-   color: inherit;
    background-color: #fff;
+}
+
+.section:nth-child(odd) .section__header {
+   color: #fff;
+}
+
+.section:nth-child(even) .section__header {
+   color: inherit;
 }
 
 .section__header {
@@ -360,6 +388,76 @@ button.button {
 
 .plans {
    padding-top: 90px;
-   padding-bottom: 80px;
+   padding-bottom: 100px;
 }
 
+.plans__container {
+   max-width: 1250px;
+   margin: auto;
+   padding-right: 15px;
+   padding-left: 15px;
+}
+
+.plan {
+   background-color: #fff;
+   border-radius: 20px;
+   overflow: hidden;
+   text-align: center;
+}
+
+.plan__name {
+   margin: 0;
+   padding: 18px 0;
+   font-size: 29px;
+   font-weight: 300;
+   color: #3f3f67;
+   text-transform: capitalize;
+}
+
+.plan__body {
+   padding: 50px;
+   padding-right: 0;
+   font-weight: 300;
+   line-height: 1.5;
+   text-align: left;
+}
+
+.plan__body_silver {
+   background-color: #c4c4db;
+}
+
+.plan__body_titanium {
+   background-color: #c6d9c8;
+}
+
+.plan__body_platinum {
+   background-color: #ddd3c1;
+}
+
+.plan__item:not(:last-child) {
+   margin-bottom: 30px;
+}
+
+.plan__button {
+   display: block;
+   padding: 22px 0;
+   font-size: var(--base-font-size);
+   font-weight: 400;
+   color: #3f3f67;
+   -webkit-transition: all .3s ease;
+   transition: all .3s ease;
+}
+
+.plan__button:hover {
+   color: #fff;
+}
+
+.plan__button_silver:hover {
+   background-color: #8282aa;
+}
+.plan__button_titanium:hover {
+   background-color: #9fbba2;
+}
+.plan__button_platinum:hover {
+   background-color: #bfaf92;
+}
