@@ -26,7 +26,7 @@
                <h1 class="hero__title">Strategy</h1>
                <p class="hero__subtitle">Another bootstrap 4.0 website template</p>
                <form action="" name="keyword-form-hero">
-                  <input class="form-control  hero__input" type="text" name="keyword-input-hero" placeholder="Type a keyword..." required>
+                  <input class="form-control  hero__form-control" type="text" name="keyword-input-hero" placeholder="Type a keyword..." required>
                   <button class="button  hero__button" type="submit">Search</button>
                </form>
             </div>
@@ -53,7 +53,7 @@
                <h1 class="hero__title">STRATEGY</h1>
                <p class="hero__desc">Photos from Unsplash</p>
                <form action="" name="email-form-hero">
-                  <input class="form-control  hero__input" type="email" name="email-input-hero" placeholder="Enter your email..." required>
+                  <input class="form-control  hero__form-control" type="email" name="email-input-hero" placeholder="Enter your email..." required>
                   <button class="button  hero__button" type="submit">Sign up</button>
                </form>
             </div>
@@ -222,13 +222,15 @@
             <div class="row">
                <form action="#" name="contact-form-contacts">
                   <div class="col col-6">
-                     <input class="form-control" type="text" name="name-input-contacts" placeholder="Name" maxlength="25" required>
-                     <input class="form-control" type="email" name="email-input-contacts" placeholder="Email" maxlength="30" required>
-                     <input class="form-control" type="text" name="subject-input-contacts" placeholder="Subject" maxlength="30" required>
+                     <input class="form-control contacts__form-control" type="text" name="name-input-contacts" placeholder="Name" maxlength="25" required>
+                     <input class="form-control contacts__form-control" type="email" name="email-input-contacts" placeholder="Email" maxlength="30" required>
+                     <input class="form-control contacts__form-control" type="text" name="subject-input-contacts" placeholder="Subject" maxlength="30" required>
                   </div>
                   <div class="col col-6">
-                     <textarea class="form-control" name="message-textarea-contacts" placeholder="Your message" minlength="20" maxlength="180" required></textarea>
-                     <button class="button  contacts__button" type="submit">Send it</button>
+                     <textarea class="form-control contacts__form-control contacts__textarea" name="message-textarea-contacts" placeholder="Your message" minlength="20" maxlength="180" required></textarea>
+                     <div class="contacts__button-wrapper">
+                        <button class="button  contacts__button" type="submit">Send it</button>
+                     </div>
                   </div>
                </form>
             </div>
@@ -248,5 +250,7 @@
          Copyright © 2017 Your Company | Designed by Templatemo
       </p>
    </footer>
+
+   <div class="spacer"></div>
 </body>
 </html>
