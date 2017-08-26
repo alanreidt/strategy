@@ -307,6 +307,38 @@ button.button {
    line-height: 1.8;
 }
 
+/* SOCIALS */
+
+.socials {
+   font-size: 0;
+}
+
+.socials__item {
+   display: inline-block;
+   vertical-align: middle;
+}
+
+.socials__item:not(:last-child) {
+   margin-right: 18px;
+}
+
+.socials__link {
+   display: inline-block;
+   width: 45px;
+   height: 45px;
+   font-size: var(--base-font-size);
+   line-height: 45px;
+   color: #fff;
+   background-color: #60608a;
+   border-radius: 50%;
+   transition: all .3s ease;
+}
+
+.socials__link:hover {
+   color: #60608a;
+   background-color: #fff;
+}
+
 
 /* =========================================================
    LAYOUT
@@ -555,4 +587,17 @@ button.button {
 .contacts__button {
    padding: 16px 48px;
    font-weight: 300;
+}
+
+/* FOOTER */
+
+.footer {
+   padding-bottom: 80px;
+   color: #fff;
+   background-color: #3f3f67;
+   text-align: center;
+}
+
+.footer__socials {
+   margin-bottom: 50px;
 }
