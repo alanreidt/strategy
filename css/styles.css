@@ -309,12 +309,19 @@ button.button {
 
 /* SOCIALS */
 
+:root {
+   --social-icon-diameter: 45px;
+}
+
 .socials {
    font-size: 0;
 }
 
 .socials__item {
    display: inline-block;
+   width: var(--social-icon-diameter);
+   height: var(--social-icon-diameter);
+   line-height: var(--social-icon-diameter);
    vertical-align: middle;
 }
 
@@ -323,11 +330,8 @@ button.button {
 }
 
 .socials__link {
-   display: inline-block;
-   width: 45px;
-   height: 45px;
+   display: block;
    font-size: var(--base-font-size);
-   line-height: 45px;
    color: #fff;
    background-color: #60608a;
    border-radius: 50%;
