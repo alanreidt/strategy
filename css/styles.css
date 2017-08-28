@@ -51,10 +51,6 @@ textarea {
    resize: none;
 }
 
-.spacer {
-   height: 600px;
-}
-
 
 /* =========================================================
    MODULE
@@ -308,6 +304,7 @@ button.button {
    width: var(--social-icon-diameter);
    height: var(--social-icon-diameter);
    line-height: var(--social-icon-diameter);
+   text-align: center;
    vertical-align: middle;
 }
 
@@ -373,10 +370,14 @@ button.button {
    z-index: 200;
 }
 
-.hero__logo {
+.hero__icon {
    display: inline-block;
    font-size: 96px;
    margin-bottom: 35px;
+}
+
+.hero__icon::before {
+   display: block;
 }
 
 .hero__title {
@@ -461,7 +462,7 @@ button.button {
 
 .plan__name {
    margin: 0;
-   padding: 18px 0;
+   padding: 20px 0;
    font-size: 29px;
    font-weight: 300;
    color: #3f3f67;
@@ -469,8 +470,7 @@ button.button {
 }
 
 .plan__body {
-   padding: 50px;
-   padding-right: 0;
+   padding: 55px 0 50px 50px;
    font-weight: 300;
    line-height: 1.5;
    text-align: left;
@@ -489,7 +489,7 @@ button.button {
 }
 
 .plan__item:not(:last-child) {
-   margin-bottom: 30px;
+   margin-bottom: 25px;
 }
 
 .plan__button {
@@ -581,6 +581,10 @@ button.button {
    margin: auto;
    padding-right: 15px;
    padding-left: 15px;
+}
+
+.contacts__header {
+   max-width: 100%;
 }
 
 .contacts__form-control:not(:last-child) {
