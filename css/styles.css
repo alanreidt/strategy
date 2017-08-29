@@ -166,7 +166,7 @@ button.button {
 /* FORM CONTROL */
 
 .form-control {
-   display: inline-block;
+   display: block;
    width: 100%;
    padding: 15px;
    font-family: inherit;
@@ -408,15 +408,14 @@ button.button {
    margin-bottom: 60px;
 }
 
-.hero__form-control {
+.hero__input {
    max-width: 400px;
+   margin: auto;
    margin-bottom: 15px;
    border: 1px solid #6a6a6a;
 }
 
 .hero__button {
-   /*display: block;*/
-   /*margin: auto;*/
    margin-top: 15px;
    font-size: 20px;
    font-weight: 600;
