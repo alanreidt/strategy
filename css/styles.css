@@ -2,11 +2,12 @@
 	BASE
 	========================================================= */
 
-/* VARIABLES */
+/* GLOBAL VARIABLES */
 
 :root {
 	--base-font-family: "Open Sans", Helvetica, Arial, sans-serif;
-	--base-font-size: 19px
+	--base-font-size: 19px;
+	--site-padding: 15px;
 }
 
 /* SETUP */
@@ -37,15 +38,33 @@ p {
 	font-weight: 300;
 }
 
-ul {
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-}
-
 textarea {
 	resize: none;
 }
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+	outline: 0;
+	box-shadow: 0 0 0 3px #54a2c7;
+}
+
+/* COMMON */
+
+/* container */
+
+.section__header,
+.features__container,
+.plans__container,
+.testimonials__container,
+.contacts__container {
+	margin: auto;
+	padding-right: var(--site-padding);
+	padding-left: var(--site-padding);
+}
+
+/* hide semantic headings */
 
 .visually-hidden {
 	position: absolute;
@@ -61,14 +80,6 @@ textarea {
 	clip-path: inset(100%);
 	clip: rect(0 0 0 0);
 	overflow: hidden;
-}
-
-a:focus,
-button:focus,
-input:focus,
-textarea:focus {
-	outline: 0;
-	box-shadow: 0 0 1px 2px #54a2c7;
 }
 
 
@@ -89,7 +100,7 @@ textarea:focus {
 }
 
 .page__link:visited {
-	color: #016da3;
+	color: #8787d0;
 }
 
 .page__link:hover {
@@ -98,9 +109,13 @@ textarea:focus {
 
 /* GRID */
 
+:root {
+	--grid-gap: 15px;
+}
+
 .row {
-	margin-right: -15px;
-	margin-left: -15px;
+	margin-right: calc(-1 * var(--grid-gap));
+	margin-left: calc(-1 * var(--grid-gap));
 	font-size: 0;
 }
 
@@ -108,8 +123,8 @@ textarea:focus {
 	display: inline-block;
 	vertical-align: top;
 
-	padding-right: 15px;
-	padding-left: 15px;
+	padding-right: var(--grid-gap);
+	padding-left: var(--grid-gap);
 	font-size: var(--base-font-size);
 }
 
@@ -161,6 +176,7 @@ textarea:focus {
 .slide-grid__title {
 	margin-top: 0;
 	margin-bottom: 0.7em;
+
 	font-size: 28px;
 	font-weight: 400;
 	line-height: 1.5;
@@ -171,6 +187,25 @@ textarea:focus {
 	margin-top: 0;
 	margin-bottom: 16px;
 	line-height: 2;
+}
+
+/* CONTACT FORM */
+
+.contact-form__form-control:not(:last-child) {
+	margin-bottom: 18px;
+}
+
+.contact-form__textarea {
+	height: 216px;
+}
+
+.contact-form__button-wrapper {
+	text-align: right;
+}
+
+.contact-form__button {
+	padding: 16px 48px;
+	font-weight: 300;
 }
 
 /* BUTTON */
@@ -196,7 +231,7 @@ a.button {
 	border-radius: 10px;
 	text-transform: capitalize;
 	-webkit-transition: background-color .3s ease;
-	transition: background-color .3s ease;
+			  transition: background-color .3s ease;
 }
 
 .button:hover,
@@ -210,6 +245,7 @@ a.button {
 	display: block;
 	width: 100%;
 	padding: 15px;
+
 	font-family: inherit;
 	font-size: 21px;
 	font-weight: 300;
@@ -217,11 +253,6 @@ a.button {
 	background-color: #fff;
 	border: 1px solid transparent;
 	border-radius: 10px;
-}
-
-.form-control:focus {
-	outline: 0;
-	border-color: #66afe9;
 }
 
 .form-control::placeholder {
@@ -242,6 +273,10 @@ a.button {
 
 /* SLIDER */
 
+:root {
+	--slider-nav-dot-diameter: 20px;
+}
+
 .slider {
 	position: relative;
 	z-index: 200;
@@ -256,11 +291,14 @@ a.button {
 }
 
 .slider-nav {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+
 	position: absolute;
 	bottom: 20px;
 
 	width: 100%;
-
 	font-size: 0;
 	text-align: center;
 	z-index: 300;
@@ -277,8 +315,9 @@ a.button {
 
 .slider-nav__dot {
 	display: inline-block;
-	width: 20px;
-	height: 20px;
+	width: var(--slider-nav-dot-diameter);
+	height: var(--slider-nav-dot-diameter);
+
 	font-size: var(--base-font-size);
 	background-color: rgba(255, 255, 255, 0.5);
 	border-radius: 50%;
@@ -308,16 +347,14 @@ a.button {
 
 .section__header {
 	max-width: 620px;
-	margin: auto;
 	margin-bottom: 64px;
-	padding-right: 15px;
-	padding-left: 15px;
 	text-align: center;
 }
 
 .section__title {
 	margin-top: 0;
 	margin-bottom: 32px;
+
 	font-size: 32px;
 	font-weight: 300;
 	line-height: 1.1;
@@ -335,6 +372,10 @@ a.button {
 }
 
 .socials {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+
 	font-size: 0;
 }
 
@@ -361,8 +402,12 @@ a.button {
 	background-color: #60608a;
 	border-radius: 50%;
 	text-decoration: none;
-	-webkit-transition: all .3s ease;
-	transition: all .3s ease;
+
+	/* 'all' value disfigures the :focus appearance */
+	-webkit-transition: color .3s ease,
+							  background-color .3s ease;
+			  transition: color .3s ease,
+							  background-color .3s ease;
 }
 
 .socials__link:hover,
@@ -409,6 +454,7 @@ a.button {
 	width: 100%;
 	max-width: 600px;
 	padding: 60px;
+
 	background-color: rgba(255,255,255,0.8);
 	border-radius: 20px;
 	text-align: center;
@@ -423,6 +469,7 @@ a.button {
 .hero__title {
 	margin-top: 0;
 	margin-bottom: 15px;
+
 	font-size: 57px;
 	font-weight: 400;
 	line-height: 1.2;
@@ -433,6 +480,7 @@ a.button {
 .hero__desc {
 	margin-top: 0;
 	margin-bottom: 14px;
+
 	font-size: 20px;
 	font-weight: 400;
 	line-height: 1.4;
@@ -475,9 +523,6 @@ a.button {
 
 .features__container {
 	max-width: 1080px;
-	padding-right: 15px;
-	padding-left: 15px;
-	margin: auto;
 }
 
 /* PLANS */
@@ -489,21 +534,19 @@ a.button {
 
 .plans__container {
 	max-width: 1250px;
-	margin: auto;
-	padding-right: 15px;
-	padding-left: 15px;
 }
 
 .plan {
 	background-color: #fff;
 	border-radius: 20px;
-	overflow: hidden;
+	/*overflow: hidden;*/
 	text-align: center;
 }
 
 .plan__name {
 	margin: 0;
 	padding: 20px 0;
+
 	font-size: 29px;
 	font-weight: 300;
 	color: #3f3f67;
@@ -511,6 +554,9 @@ a.button {
 }
 
 .plan__body {
+	margin: 0;
+	list-style-type: none;
+
 	padding: 55px 0 50px 50px;
 	font-weight: 300;
 	line-height: 1.5;
@@ -536,12 +582,15 @@ a.button {
 .plan__button {
 	display: block;
 	padding: 22px 0;
+
 	font-size: var(--base-font-size);
 	font-weight: 400;
 	color: #3f3f67;
+	border-radius: 0 0 20px 20px;
 	text-decoration: none;
+
 	-webkit-transition: all .3s ease;
-	transition: all .3s ease;
+			  transition: all .3s ease;
 }
 
 .plan__button:hover,
@@ -571,13 +620,9 @@ a.button {
 
 .testimonials__container {
 	max-width: 716px;
-	margin: auto;
-	padding-right: 15px;
-	padding-left: 15px;
 }
 
 .testimonial-group {
-	/*background-color: #666;*/
 	padding-top: 10px;
 	padding-bottom: 60px;
 }
@@ -609,7 +654,6 @@ a.button {
 }
 
 .testimonial__content {
-	/*background-color: #999;*/
 	margin-top: 30px;
 	margin-bottom: 0;
 	line-height: 1.9;
@@ -624,30 +668,10 @@ a.button {
 
 .contacts__container {
 	max-width: 846px;
-	margin: auto;
-	padding-right: 15px;
-	padding-left: 15px;
 }
 
 .contacts__header {
 	max-width: 100%;
-}
-
-.contacts__form-control:not(:last-child) {
-	margin-bottom: 18px;
-}
-
-.contacts__textarea {
-	height: 216px;
-}
-
-.contacts__button-wrapper {
-	text-align: right;
-}
-
-.contacts__button {
-	padding: 16px 48px;
-	font-weight: 300;
 }
 
 /* FOOTER */
