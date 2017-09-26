@@ -5,7 +5,7 @@
 /* GLOBAL VARIABLES */
 
 :root {
-	--base-font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	--main-font-family: "Open Sans", Helvetica, Arial, sans-serif;
 	--base-font-size: 19px;
 	--site-padding: 15px;
 }
@@ -24,7 +24,7 @@ html {
 
 body {
 	margin: 0;
-	font-family: var(--base-font-family);
+	font-family: var(--main-font-family);
 	font-size: var(--base-font-size);
 	color: #2c343b;
 	background-color: #fff;
