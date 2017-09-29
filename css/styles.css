@@ -206,7 +206,7 @@ a.button {
 
 	padding: 20px 52px;
 	font-size: inherit;
-	line-height: 1.4;
+	line-height: normal;
 	color: #fff;
 	background-color: #0099cb;
 	border: none;
