@@ -1,3 +1,10 @@
+/* TODO:
+ *  - change min-height for hero;
+ *  - change media query for height: 100vh;
+ *  - height: 100vh for smartphones;
+ *  - test media for mobiles when layout would be responsive;
+ */
+
 /* =========================================================
 	BASE
 	========================================================= */
@@ -14,6 +21,7 @@
 
 html {
 	box-sizing: border-box;
+	font-family: 62.5%;
 }
 
 *,
@@ -24,6 +32,7 @@ html {
 
 body {
 	margin: 0;
+
 	font-family: var(--main-font-family);
 	font-size: var(--base-font-size);
 	color: #2c343b;
@@ -477,13 +486,14 @@ a.button {
 	display: table;
 	width: 100%;
 
-	height: 900px;
-	background: center / cover no-repeat;
+	height: 90vh;
+	min-height: 720px;
+	background: url(../img/bg-hero-1.jpg) #382c52 center / cover no-repeat;
 }
 
 .hero_search {
-	background-image: url(../img/bg-hero-1.jpg);
-	background-color: #382c52;
+	/*background-image: url(../img/bg-hero-1.jpg);*/
+	/*background-color: #382c52;*/
 }
 
 .hero_explore {
@@ -496,7 +506,7 @@ a.button {
 	background-color: #637e96;
 }
 
-.hero__content-wrapper {
+.hero__inner {
 	display: table-cell;
 	vertical-align: middle;
 }
@@ -519,15 +529,15 @@ a.button {
 }
 
 .hero__icon {
-	font-size: 96px;
-	margin-bottom: 35px;
+	font-size: 5.0526em;
+	margin-bottom: 0.3646em;
 }
 
 .hero__title {
 	margin-top: 0;
-	margin-bottom: 15px;
+	margin-bottom: 0.2632em;
 
-	font-size: 57px;
+	font-size: 3em;
 	font-weight: 400;
 	line-height: 1.2;
 	color: #000;
@@ -536,35 +546,48 @@ a.button {
 
 .hero__desc {
 	margin-top: 0;
-	margin-bottom: 14px;
+	margin-bottom: 0.6364em;
 
-	font-size: 20px;
+	font-size: 1.1579em;
 	font-weight: 400;
 	line-height: 1.4;
 	color: #000;
 }
 
 .hero__desc_search {
-	margin-bottom: 60px;
+	/*margin-bottom: 2.7273em;*/
 	text-transform: capitalize;
 }
 
+.hero__desc_explore {
+	margin-bottom: 1.3636em; /* buffer, it works on mobile */
+}
+
 .hero__desc_signup {
-	margin-bottom: 60px;
+	/*margin-bottom: 2.7273em;*/
+}
+
+.hero__form {
+	margin-top: 2.7273em;
 }
 
 .hero__input {
 	max-width: 400px;
 	margin: auto;
+	padding: 0.7143em;
+
+	font-size: 1.1053em;
 	border: 1px solid #6a6a6a;
 }
 
 .hero__button-wrapper {
-	margin-top: 30px;
+	margin-top: 1.5789em;
 }
 
 .hero__button {
-	font-size: 20px;
+	padding: 1em 2.6em;
+
+	font-size: 1.0526em;
 	font-weight: 600;
 	letter-spacing: 1px;
 }
@@ -752,4 +775,216 @@ a.button {
 .footer__copyright {
 	margin-top: 0;
 	margin-bottom: 0;
+}
+
+
+
+
+/* =========================================================
+	MEDIA QUERIES
+	========================================================= */
+
+/* test of media features */
+
+@media (min-resolution: 90dpi) {
+	.features {
+		/*background-color: yellow;*/
+	}
+}
+
+@media (min-resolution: 190dpi),
+		 (-webkit-min-device-pixel-ratio: 1.9) {
+	.features {
+		/*background-color: red;*/
+	}
+}
+
+@media (hover: none) {
+	.features {
+		/*background-color: green;*/
+	}
+}
+
+/*  */
+
+@media (min-width: 1170px) and (max-height: 720px) {
+	.hero {
+		/*height: 720px;*/
+	}
+}
+
+@media (max-width: 1170px) and (max-height: 670px) {
+	.hero {
+		/*height: 670px;*/
+	}
+}
+
+/* desktops with height of viewport < 699px (<13.3 inch) and mobiles (it don't have capability to hover over) < 879px */
+
+@media (orientation: landscape) and (max-height: 700px) and (hover: hover),
+		 (orientation: landscape) and (max-height: 880px) and (hover: none) {
+	.hero {
+		/*height: 100vh;*/
+	}
+}
+
+
+
+
+
+/* when 70vh > .hero min-height (670px) */
+/*@media (orientation: portrait) and (min-height: 960px) {*/
+
+
+@media (orientation: portrait) {
+	.hero {
+		height: 70vh;
+	}
+}
+
+/* only mobiles (they don't have capability to hover over),
+	except this rule you can limit the orientation portrait rule above */
+
+@media (orientation: landscape) and (hover: none),
+		 (orientation: portrait) and (max-height: 600px) {
+	.hero {
+		height: 100vh;
+	}
+}
+
+@media (max-width: 1170px) {
+	.hero {
+		min-height: 670px;
+	}
+
+	.hero__content {
+		width: 60%;
+		max-width: 560px;
+		padding: 5%;
+		font-size: 17px;
+	}
+
+	.hero__input {
+		max-width: 375px;
+	}
+}
+
+@media (max-width: 860px) {
+	.hero {
+		min-height: 590px;
+	}
+
+	.hero__content {
+		font-size: 15px;
+	}
+}
+
+/* test 820px later */
+
+@media (max-width: 745px) {
+	.hero {
+		min-height: 550px;
+	}
+
+	.hero__icon {
+		font-size: 4.2em;
+	}
+
+	.hero__title {
+		font-size: 2.4em;
+	}
+
+	.hero__form {
+		margin-top: 2.1333em;
+	}
+
+	.hero__button-wrapper {
+		margin-top: 1em;
+	}
+
+	.hero__button {
+		font-size: 0.95em;
+	}
+}
+
+@media (max-width: 700px) {
+	.hero {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+
+	.hero__content {
+		width: 100%;
+		max-width: 420px;
+		padding: 30px;
+	}
+
+	.hero__input {
+		max-width: 320px;
+	}
+}
+
+@media (max-width: 460px) {
+	.hero {
+		min-height: 525px;
+	}
+
+	.hero__content {
+		font-size: 13.33333px;
+	}
+
+	.hero__title,
+	.hero__desc {
+		font-weight: 300;
+	}
+
+	.hero__desc {
+		font-size: 1.2em;
+	}
+
+	.hero__content {
+		/*left: 0;*/
+		/*margin-left: var(--site-padding);*/
+		/*margin-right: var(--site-padding);*/
+
+		/*-webkit-transform: translate(0, -50%);*/
+				  /*transform: translate(0, -50%);*/
+	}
+
+	.hero {
+		/*min-height: 350px;*/
+		/*background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
+								url(../img/bg-hero-1.jpg);*/
+	}
+
+	.hero__content {
+		/*padding: 0 15px;*/
+		/*max-width: initial;*/
+		/*background-color: transparent;*/
+		/*height: 100%;*/
+		/*border-radius: initial;*/
+	}
+
+	.hero__icon {
+		/*display: none;*/
+	}
+
+	.hero__desc_search {
+		/*margin-bottom: 20px;*/
+	}
+
+	.hero__input {
+		/*max-width: 260px;*/
+	}
+
+	.hero__button-wrapper {
+		/*margin-top: 15px;*/
+	}
+}
+
+@media (max-width: 360px) {
+	.hero {
+		padding-left: 2%;
+		padding-right: 2%;
+	}
 }
