@@ -1,8 +1,8 @@
 /* TODO:
  *  - change min-height for hero;
- *  - change media query for height: 100vh;
+ *  - change a media query for height: 100vh;
  *  - height: 100vh for smartphones;
- *  - test media for mobiles when layout would be responsive;
+ *  - test a media query for mobiles when layout would be responsive;
  */
 
 /* =========================================================
@@ -14,7 +14,7 @@
 :root {
 	--main-font-family: "Open Sans", Helvetica, Arial, sans-serif;
 	--base-font-size: 19px;
-	--site-padding: 15px;
+	--site-padding: 30px;
 }
 
 /* SETUP */
