@@ -14,7 +14,7 @@
 :root {
 	--main-font-family: "Open Sans", Helvetica, Arial, sans-serif;
 	--base-font-size: 19px;
-	--site-padding: 30px;
+	--page-padding: 30px;
 }
 
 /* SETUP */
@@ -37,6 +37,7 @@ body {
 	font-size: var(--base-font-size);
 	color: #2c343b;
 	background-color: #fff;
+	overflow-x: hidden;
 }
 
 img {
@@ -77,8 +78,8 @@ textarea:focus {
 .testimonials__container,
 .contacts__container {
 	margin: auto;
-	padding-right: var(--site-padding);
-	padding-left: var(--site-padding);
+	padding-right: var(--page-padding);
+	padding-left: var(--page-padding);
 }
 
 /* hide semantic elements */
@@ -416,22 +417,24 @@ a.button {
 }
 
 .section__header {
-	max-width: 620px;
-	margin-bottom: 64px;
+	max-width: 62rem;
+	margin-bottom: 6.4rem;
 	text-align: center;
 }
 
 .section__title {
 	margin-top: 0;
-	margin-bottom: 32px;
+	margin-bottom: 1em;
 
-	font-size: 32px;
+	font-size: 3.2rem;
 	font-weight: 300;
 	line-height: 1.1;
 }
 
 .section__desc {
 	margin: 0;
+
+	font-size: 1.9rem;
 	line-height: 1.8;
 }
 
@@ -611,26 +614,33 @@ a.button {
 /* PLANS */
 
 .plans {
-	padding-top: 90px;
-	padding-bottom: 100px;
+	padding-top: 9rem;
+	padding-bottom: 10rem;
 }
 
 .plans__container {
 	max-width: 1250px;
 }
 
+.plan-group {
+	text-align: center;
+}
+
+.plan-wrapper {
+	font-size: 1rem;
+}
+
 .plan {
 	background-color: #fff;
 	border-radius: 20px;
-	/*overflow: hidden;*/
 	text-align: center;
 }
 
 .plan__name {
 	margin: 0;
-	padding: 20px 0;
+	padding: 0.68966em 0;
 
-	font-size: 29px;
+	font-size: 2.9rem;
 	font-weight: 300;
 	color: #3f3f67;
 	text-transform: capitalize;
@@ -640,7 +650,8 @@ a.button {
 	margin: 0;
 	list-style-type: none;
 
-	padding: 55px 0 50px 50px;
+	padding: 15% 10% 13% 14%;
+	font-size: 1.9rem;
 	font-weight: 300;
 	line-height: 1.5;
 	text-align: left;
@@ -659,20 +670,20 @@ a.button {
 }
 
 .plan__item:not(:last-child) {
-	margin-bottom: 25px;
+	margin-bottom: 1.3158em;
 }
 
 .plan__button {
 	display: block;
-	padding: 22px 0;
+	padding: 1.1579em 0;
 
-	font-size: var(--base-font-size);
+	font-size: 1.9rem;
 	font-weight: 400;
 	color: #3f3f67;
-	border-radius: 0 0 20px 20px;
+	border-radius: 0 0 20px 20px; /* overflow cuts the outline */
 	text-decoration: none;
 
-	-webkit-transition: all .3s ease;
+	-webkit-transition: all .3s ease; /* edit */
 			  transition: all .3s ease;
 }
 
@@ -821,9 +832,22 @@ a.button {
 }
 
 
+@media (max-width: 1040px) {
+	:root {
+		--grid-gap: 0.75%;
+	}
+
+	.plan__body {
+		padding-right: 8%;
+		padding-left: 8%;
+		text-align: inherit;
+	}
+}
+
+
 @media (max-width: 960px) {
 	:root {
-		--site-padding: 15px;
+		--page-padding: 15px;
 		--slide-grid-content-padding: 5%;
 	}
 	html {
@@ -839,6 +863,26 @@ a.button {
 
 	.hero__content {
 		font-size: 15px;
+	}
+}
+
+
+@media (max-width: 840px) {
+	:root {
+		--grid-gap: 15px;
+	}
+
+	.plan-wrapper {
+		width: auto;
+	}
+
+	.plan-wrapper:not(:last-child) {
+		margin-bottom: 3em;
+	}
+
+	.plan__body {
+		padding-right: 4rem;
+		padding-left: 4rem;
 	}
 }
 
@@ -895,6 +939,10 @@ a.button {
 
 
 @media (max-width: 660px) {
+	:root {
+		--grid-gap: 10px;
+	}
+
 	.slide-grid__img-wrapper,
 	.slide-grid__content {
 		width: 100%;
