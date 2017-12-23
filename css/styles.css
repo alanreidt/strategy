@@ -568,7 +568,7 @@ a.button {
 }
 
 .hero__desc_explore {
-	margin-bottom: 1.3636em; /* buffer, it works on mobile */
+	margin-bottom: 1.3636em; /* buffer, it is used for mobiles */
 }
 
 .hero__form {
@@ -633,7 +633,6 @@ a.button {
 .plan {
 	background-color: #fff;
 	border-radius: 20px;
-	text-align: center;
 }
 
 .plan__name {
@@ -850,6 +849,7 @@ a.button {
 		--page-padding: 15px;
 		--slide-grid-content-padding: 5%;
 	}
+
 	html {
 		font-size: 56.25%;
 	}
