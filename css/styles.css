@@ -835,20 +835,37 @@ a.button {
 
 /* FOOTER */
 
+:root {
+	--social-icon-diameter: 2.3684em;
+}
+
 .footer {
-	padding-bottom: 80px;
+	padding-bottom: 8rem;
 	color: #fff;
 	background-color: #3f3f67;
 	text-align: center;
 }
 
 .footer__socials {
-	margin-bottom: 50px;
+	margin-bottom: 5rem;
+}
+
+.footer__socials .socials__item {
+	font-size: 1.9rem;
+}
+
+.footer__socials .socials__item:not(:last-child) {
+	margin-right: 0.9474em;
+}
+
+.footer__socials .socials__link {
+	font-size: 1.9rem;
+
 }
 
 .footer__copyright {
-	margin-top: 0;
-	margin-bottom: 0;
+	margin: 0;
+	font-size: 1.9rem;
 }
 
 
