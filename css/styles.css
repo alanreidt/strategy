@@ -360,8 +360,6 @@ a.button {
 }
 
 .contact-form__form-control {
-	/*margin-bottom: 0.8571em;*/
-	/*font-size: 2.1rem;*/
 	padding: 0.7143em;
 }
 
@@ -375,8 +373,9 @@ a.button {
 }
 
 .contact-form__button {
-	font-size: 1.9rem;
 	padding: 0.8421em 2.5263em;
+
+	font-size: 1.9rem;
 	font-weight: 300;
 }
 
