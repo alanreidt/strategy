@@ -66,6 +66,10 @@ textarea:focus {
 	box-shadow: 0 0 0 3px #54a2c7;
 }
 
+.spacer {
+	height: 600px; /* remove */
+}
+
 
 
 
@@ -209,7 +213,7 @@ textarea:focus {
 
 .slide-grid:nth-child(even) .slide-grid__content {
 	padding-right: var(--slide-grid-content-padding);
-	text-align: left;
+	direction: ltr;
 }
 
 .slide-grid__item {
@@ -294,13 +298,20 @@ a.button {
 
 /* FORM CONTROL */
 
+.form-control-wrapper {
+	display: inline-block;
+	width: 100%;
+
+	font-size: 21px;
+}
+
 .form-control {
-	display: block;
+	display: inline-block;
 	width: 100%;
 	padding: 15px;
 
 	font-family: inherit;
-	font-size: 21px;
+	font-size: inherit;
 	font-weight: 300;
 	color: #55595c;
 	background-color: #fff;
@@ -327,12 +338,36 @@ a.button {
 
 /* CONTACT FORM */
 
-.contact-form__form-control:not(:last-child) {
-	margin-bottom: 18px;
+:root {
+	--contact-form-grid-gap: 1.5rem;
+}
+
+.contact-form__row {
+	margin-right: calc(-1 * var(--contact-form-grid-gap));
+	margin-left: calc(-1 * var(--contact-form-grid-gap));
+}
+
+.contact-form__col {
+	padding-right: var(--contact-form-grid-gap);
+	padding-left: var(--contact-form-grid-gap);
+
+	font-size: 2.1rem;
+}
+
+.contact-form__form-control-wrapper {
+	margin-bottom: 0.8571em;
+	font-size: 2.1rem;
+}
+
+.contact-form__form-control {
+	/*margin-bottom: 0.8571em;*/
+	/*font-size: 2.1rem;*/
+	padding: 0.7143em;
 }
 
 .contact-form__message {
-	height: 216px;
+	font-size: 2.1rem;
+	height: 10.2857em;
 }
 
 .contact-form__button-wrapper {
@@ -340,7 +375,8 @@ a.button {
 }
 
 .contact-form__button {
-	padding: 16px 48px;
+	font-size: 1.9rem;
+	padding: 0.8421em 2.5263em;
 	font-weight: 300;
 }
 
@@ -620,6 +656,10 @@ a.button {
 
 /* PLANS */
 
+:root {
+	--plans-grid-gap: 15px;
+}
+
 .plans {
 	padding-top: 9rem;
 	padding-bottom: 10rem;
@@ -630,10 +670,16 @@ a.button {
 }
 
 .plan-group {
+	margin-right: calc(-1 * var(--plans-grid-gap)); /* edit */
+	margin-left: calc(-1 * var(--plans-grid-gap)); /* edit */
+
 	text-align: center;
 }
 
 .plan-wrapper {
+	padding-right: var(--plans-grid-gap); /* edit */
+	padding-left: var(--plans-grid-gap); /* edit */
+
 	font-size: 1rem;
 }
 
@@ -751,13 +797,13 @@ a.button {
 
 .testimonial__img-wrapper {
 	width: 25vw;
+	min-width: 145px;
 	margin: auto;
 }
 
 .testimonial__img {
 	width: 280px;
 	max-width: 100%;
-	min-width: 145px;
 
 	border-width: 0.8em;
 	vertical-align: middle;
@@ -780,7 +826,7 @@ a.button {
 }
 
 .contacts__container {
-	max-width: 846px;
+	max-width: 84.6rem;
 }
 
 .contacts__header {
@@ -851,7 +897,7 @@ a.button {
 
 @media (max-width: 1040px) {
 	:root {
-		--grid-gap: 0.75%;
+		--plans-grid-gap: 0.75%;
 	}
 
 	.plan__body {
@@ -871,6 +917,10 @@ a.button {
 	html {
 		font-size: 56.25%;
 	}
+
+	.contact-form__message {
+		height: 10.4444em;
+	}
 }
 
 
@@ -887,7 +937,7 @@ a.button {
 
 @media (max-width: 840px) {
 	:root {
-		--grid-gap: 15px;
+		--plans-grid-gap: 15px;
 	}
 
 	.plan-wrapper {
@@ -909,7 +959,7 @@ a.button {
 
 @media (max-width: 745px) {
 	html {
-		font-size: 8px;
+		font-size: 50%;
 	}
 
 	.hero {
@@ -956,9 +1006,16 @@ a.button {
 }
 
 
+@media (max-width: 84.6rem) {
+	:root {
+		--contact-form-grid-gap: 1%;
+	}
+}
+
+
 @media (max-width: 660px) {
 	:root {
-		--grid-gap: 10px;
+		--plans-grid-gap: 10px;
 	}
 
 	.slide-grid__img-wrapper,
@@ -999,6 +1056,44 @@ a.button {
 }
 
 
+@media (max-width: 590px) {
+	:root {
+		--contact-form-grid-gap: 0;
+		--contact-form-item-gap: 1%; /* edit */
+	}
+
+	.contact-form__col {
+		display: block;
+		width: initial; /* edit */
+		margin-left: calc( -1 * var(--contact-form-item-gap) );
+		margin-right: calc( -1 * var(--contact-form-item-gap) );
+
+		font-size: 0;
+	}
+
+	.contact-form__form-control-wrapper {
+		width: 50%;
+		padding-left: var(--contact-form-item-gap);
+		padding-right: var(--contact-form-item-gap);
+
+		font-size: 2.1rem;
+	}
+
+	.contact-form__form-control-wrapper:nth-child(2n+3),
+	.contact-form__message-wrapper {
+		width: 100%;
+	}
+
+	.contact-form__name {
+		width: 40%;
+	}
+
+	.contact-form__email {
+		width: 60%;
+	}
+}
+
+
 @media (max-width: 460px) {
 	.hero {
 		min-height: 525px;
@@ -1015,6 +1110,10 @@ a.button {
 
 	.hero__desc {
 		font-size: 1.2em;
+	}
+
+	.contact-form__form-control-wrapper {
+		width: 100%;
 	}
 }
 
